@@ -9,7 +9,7 @@ DATETIME=$(date '+%Y-%m-%d %H-%M-%S')
 LOG_PATH="/home/mikhail/radeon/${DATETIME}/"
 
 cd ${UMR_PATH}
-mkdir "${LOG_PATH}"
+mkdir -p "${LOG_PATH}"
 
 # Declare a string array with type
 declare -a COMMANDS=(
@@ -38,4 +38,3 @@ for IDX in "${!COMMANDS[@]}"; do
   echo ${COMMANDS[$IDX]} > "${LOG_PATH}${LOGS_NAMES[$IDX]}.txt"
   ${COMMANDS[$IDX]} >> "${LOG_PATH}${LOGS_NAMES[$IDX]}.txt" 2>&1
 done
-
